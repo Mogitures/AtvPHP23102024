@@ -11,54 +11,99 @@
 
 	<?php
 
+		$comp = [];
+		$fname = [];
+
+		session_start();
+
 		$_SESSION['nome2'] = $_POST['nome2'];
 		$_SESSION['idade2'] = $_POST['idade2'];
 		$_SESSION['peso2'] = $_POST['peso2'];
 		$_SESSION['altura2'] = $_POST['altura2'];
-		$_SESSION['nome1'] = $_POST['nome1'];
-		$_SESSION['idade1'] = $_POST['idade1'];
-		$_SESSION['peso1'] = $_POST['peso1'];
+		$_SESSION['nome1'];
+		$_SESSION['idade1'];
+		$_SESSION['peso1'];
 		$_SESSION['altura1'];
+
+		if ($_SESSION['altura1'] > $_SESSION['altura2']) {
+			
+			$comp = [1 => $_SESSION['altura1']];
+			$fname = [1 => $_SESSION['nome1']];
+
+		}else{
+
+			$comp = [1 => $_SESSION['altura2']];
+			$fname = [1 => $_SESSION['nome2']];
+
+		}
+
+		if ($_SESSION['idade1'] > $_SESSION['idade2']) {
+			
+			$comp = [2 => $_SESSION['idade1']];
+			$fname = [2 => $_SESSION['nome1']];
+
+		}else{
+
+			$comp = [2 => $_SESSION['idade2']];
+			$fname = [2 => $_SESSION['nome2']];
+
+		}
+
+		if ($_SESSION['peso1'] > $_SESSION['peso2']) {
+			
+			$comp = [3 => $_SESSION['peso1']];
+			$fname = [3 => $_SESSION['nome1']];
+
+		}else{
+
+			$comp = [3 => $_SESSION['peso2']];
+			$fname = [3 => $_SESSION['nome2']];
+
+		}
+
 	 ?>
 
 </head>
 <body>
 
-	<?php
+	<?php 
 
-		echo $_SESSION['nome1'];
-		echo $_SESSION['idade1'];
-		echo $_SESSION['peso1'];
-		echo $_SESSION['altura1'];
-		echo $_SESSION['nome2'];
-		echo $_SESSION['idade2'];
-		echo $_SESSION['peso2'];
-		echo $_SESSION['altura2'];
+		echo $comp[1];
 
 	 ?>
 
-	<h2>Pessoa 2</h2>
+	<h2>Comparação</h2>
 
-	<form name="pessoa1" method="post" action="resultado.php">
+	<div>
 		
-		<div>
-			<label for="nome">Nome:</label>
-			<input type="text" name="nome2" id="nome" autocomplete="off" required autofocus maxlength="30">
-		</div>
+		<h6>Maior altura:</h6>
+		<h4><?php echo $fname[1]; ?></h4> com <b><?php echo $comp[1]; ?></b> metros de altura.
 
-		<div>
-			<label for="idade">Idade:</label>
-			<input type="number" name="idade2" id="idade" min="1" max="120" required autocomplete="off">
-		</div>
+	</div>
 
-		<div>
-			<label for="peso">Peso:</label>
-			<input type="number" name="peso2" value="" placeholder="Utilize '.' invés de ','" required autocomplete="off" min="0" max="600"> Kg
-		</div>
-		<div>
-			<label for="altura">Altura:</label>
-			<input type="number" name="altura2" id="altura" required autocomplete="off" placeholder="Utilize '.' invés de ','" min="0" max="3"> Metros
-		</div>
+
+
+	<div>
+		
+		<h4><?php echo $_SESSION['nome1']; ?></h4>
+
+		<div><b>Altura: </b><?php $_SESSION['idade1'] ?></div>
+		<div><b>Altura: </b><?php $_SESSION['altura1'] ?></div>
+		<div><b>Altura: </b><?php $_SESSION['peso1'] ?></div>		
+
+	</div>
+
+	<div>
+		
+		<h4><?php echo $_SESSION['nome2']; ?></h4>
+
+		<div><b>Altura: </b><?php $_SESSION['idade2'] ?></div>
+		<div><b>Altura: </b><?php $_SESSION['altura2'] ?></div>
+		<div><b>Altura: </b><?php $_SESSION['peso2'] ?></div>		
+
+	</div>
+
+
 
 	</form>
 

@@ -9,9 +9,7 @@
 
 	<link rel="stylesheet" type="text/css" href="css.css">
 
-	<?php 
-
-		session_start();
+	<?php
 
 		$_SESSION['nome1'] = $_POST['nome1'];
 		$_SESSION['idade1'] = $_POST['idade1'];
@@ -23,14 +21,6 @@
 </head>
 <body>
 
-	<?php 
-
-		echo $_SESSION['nome1'];
-		echo $_SESSION['idade1'];
-		echo $_SESSION['peso1'];
-		echo $_SESSION['altura1'];
-
-	 ?>
 
 	<h2>Pessoa 2</h2>
 
