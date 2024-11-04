@@ -7,9 +7,11 @@
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
-	<link rel="stylesheet" type="text/css" href="css.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
 
 	<?php
+
+		session_start();
 
 		$_SESSION['nome1'] = $_POST['nome1'];
 		$_SESSION['idade1'] = $_POST['idade1'];
