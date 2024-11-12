@@ -1,5 +1,18 @@
 body {
 
 	margin: 30px;
+	flex-wrap: wrap;
 
+}
+
+.container {
+    display: flex;
+}
+
+#comparacao {
+    flex: 1;
+}
+
+#dados {
+    flex: 1;
 }

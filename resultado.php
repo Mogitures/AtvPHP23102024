@@ -38,7 +38,6 @@
 					echo "</b> com $n2";
 
 				}
-
 			}
 
 		 ?>
@@ -46,47 +45,79 @@
 	</head>
 
 	<body>
+		<div class="container">
+			<div id="comparacao">
 
-		<h2>Comparação</h2>
+				<h2>Comparação</h2>
+				<br>
+				<div class="card w-75" style="max-width: 25rem;">
+					<div class="card-body">
+						
+						<h6 class="card-title">Maior altura:</h6>
+						<p class="card-text"><?php comp($_SESSION['altura1'], $_SESSION['altura2']);?> metros de altura.</p>
+						<div align="right"><a href="#" class="btn btn-light aright">❤</a></div>
 
-		<div class="card w-75">
-			<div class="card-body">
-				
-				<h6 class="card-title">Maior altura:</h6>
-				<p class="card-text"><?php comp($_SESSION['altura1'], $_SESSION['altura2']);?> metros de altura.</p>
-				<a href="#" class="btn btn-primary">❤</a>
+					</div>
+				</div>
+				<br>
+				<div class="card w-75" style="max-width: 25rem;">
+					<div class="card-body">
 
+						<h6 class="card-title">Maior idade:</h6>
+						<p class="card-text"><?php comp($_SESSION['idade1'], $_SESSION['idade2']);?> anos de idade.</p>
+						<div align="right"><a href="#" class="btn btn-light aright">❤</a></div>
+					
+					</div>
+				</div>
+				<br>
+				<div class="card w-75" style="max-width: 25rem;">
+					<div class="card-body">
+
+						<h6 class="card-title">Maior peso:</h6>
+						<p class="card-title"><?php comp($_SESSION['peso1'], $_SESSION['peso2']);?> quilos.</p>
+						<div align="right"><a href="#" class="btn btn-light aright">❤</a></div>
+
+					</div>
+				</div>
 			</div>
-		</div>
 
-				<h6>Maior idade:</h6>
-				<?php comp($_SESSION['idade1'], $_SESSION['idade2']);?> anos de idade.
-				<p>
-				<h6>Maior peso:</h6>
-				<?php comp($_SESSION['peso1'], $_SESSION['peso2']);?> quilos.
+				<div id="dados">
+					<h2>Dados</h2>
+					<br>
+					<div class="card text-black bg-light mb-3" style="max-width: 18rem;">
+						
+						<div class="card-header"><?php echo $_SESSION['nome1']; ?></div>
 
+						<div class="card-body">
+							<div class="card-text">
+								<div><b>Idade: </b><?php echo $_SESSION['idade1'] ?></div>
+								<div><b>Altura: </b><?php echo $_SESSION['altura1'] ?></div>
+								<div><b>Peso: </b><?php echo $_SESSION['peso1'] ?></div>
+							</div>
+						</div>		
+
+					</div>
+
+					<br>
+
+					<div class="card text-black bg-light mb-3" style="max-width: 18rem;">
+						
+						<div class="card-header"><?php echo $_SESSION['nome2']; ?></div>
+
+						<div class="card-body">
+							<div class="card-text">
+								<div><b>Idade: </b><?php echo $_SESSION['idade2'] ?></div>
+								<div><b>Altura: </b><?php echo $_SESSION['altura2'] ?></div>
+								<div><b>Peso: </b><?php echo $_SESSION['peso2'] ?></div>
+							</div>
+						</div>		
+					</div>
+				</div>
 			</div>
-		</div>
-
-		<div>
-			
-			<h4><?php echo $_SESSION['nome1']; ?></h4>
-
-			<div><b>Idade: </b><?php echo $_SESSION['idade1'] ?></div>
-			<div><b>Altura: </b><?php echo $_SESSION['altura1'] ?></div>
-			<div><b>Peso: </b><?php echo $_SESSION['peso1'] ?></div>		
-
-		</div>
-
-		<div>
-			
-			<h4><?php echo $_SESSION['nome2']; ?></h4>
-
-			<div><b>Idade: </b><?php echo $_SESSION['idade2'] ?></div>
-			<div><b>Altura: </b><?php echo $_SESSION['altura2'] ?></div>
-			<div><b>Peso: </b><?php echo $_SESSION['peso2'] ?></div>		
-
-		</div>
+		<br>
+		<hr>
+		<br>
+		<a href="index.php" class="btn btn-outline-primary">Enviar novamente</a>
 
 	</body>
 

@@ -28,27 +28,28 @@
 
 	<form name="pessoa1" method="post" action="resultado.php">
 		
-		<div>
+		<div class="form-group">
 			<label for="nome">Nome:</label>
-			<input type="text" name="nome2" id="nome" autocomplete="off" required autofocus maxlength="30">
+			<input type="text" class="form-control" name="nome2" id="nome" autocomplete="off" required autofocus maxlength="30" style="max-width: 45rem;">
 		</div>
 
-		<div>
+		<div class="form-group">
 			<label for="idade">Idade:</label>
-			<input type="number" name="idade2" id="idade" min="1" max="120" required autocomplete="off">
+			<input class="form-control" type="number" name="idade2" id="idade" min="1" max="120" required autocomplete="off" style="max-width: 45rem;">
 		</div>
 
-		<div>
+		<div class="form-group">
 			<label for="peso">Peso:</label>
-			<input type="text" name="peso2" value="" placeholder="Utilize '.' invés de ','" required autocomplete="off"> Kg
+			<input class="form-control" type="text" name="peso2" value="" placeholder="Utilize '.' invés de ',' (Medida em Kg)" required autocomplete="off" min="0" max="600" style="max-width: 45rem;">
 		</div>
 		<div>
 			<label for="altura">Altura:</label>
-			<input type="text" name="altura2" id="altura" required autocomplete="off" placeholder="Utilize '.' invés de ','"> Metros
-		</div>
+			<input class="form-control" type="text" name="altura2" id="altura" required autocomplete="off" placeholder="Utilize '.' invés de ',' (Medida em metros)" style="max-width: 45rem;">
+		</div class="form-group">
+		<br><br>
 		<div>
-			<input type="submit" name="enviar" value="Enviar">
-			<input type="reset" name="limpar" value="Limpar">
+			<input class="btn btn-primary" type="submit" name="enviar" value="Enviar">
+			<input class="btn btn-outline-primary" type="reset" name="limpar" value="Limpar">
 		</div>
 
 	</form>
